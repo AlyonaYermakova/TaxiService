@@ -8,6 +8,7 @@ public class ActionFactory {
 
     static {
         actions.put("login", new LoginAction());
+        actions.put("registration", new RegistrationAction());
     }
 
     public static Action getAction(String actionName) {

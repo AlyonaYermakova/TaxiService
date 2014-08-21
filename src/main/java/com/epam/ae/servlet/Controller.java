@@ -2,6 +2,7 @@ package com.epam.ae.servlet;
 
 import com.epam.ae.action.Action;
 import com.epam.ae.action.ActionFactory;
+import com.epam.ae.action.ActionResult;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,16 +12,21 @@ import java.io.IOException;
 
 public class Controller extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        Action action = ActionFactory.getAction("login");
-        String result = action.execute(request);
-        request.getRequestDispatcher(result).forward(request, response);
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        String actionName = req.getParameter("action");
+        Action action = ActionFactory.getAction(actionName);
+        ActionResult result = action.execute(req, resp);
+
+        if (result.getPath().equals(req.getPathInfo().substring(1))){
+            req.getRequestDispatcher("/WEB-INF/" + result.getPath() + ".jsp").forward(req, resp);
+        } else {
+            req.getRequestDispatcher("/" + result.getPath() + ".jsp");
+        }
+
+        req.getRequestDispatcher("/WEB-INF/" + result + ".jsp").forward(req, resp);
+
+
     }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
-
-    }
-
 }
