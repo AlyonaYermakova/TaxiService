@@ -2,12 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Login</title>
+    <title>login</title>
 </head>
 <body>
 <h2>Please, enter your login and password</h2>
-<form action=${pageContext.request.contextPath}/p method="post">
-    Username: <input type="text" name="user">
+<form method="post">
+    Username: <input type="text" name="login">
     <br>
     Password: <input type="password" name="password">
     <br>

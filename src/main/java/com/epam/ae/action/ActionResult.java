@@ -25,6 +25,7 @@ public class ActionResult {
         this.redirect = redirect;
     }
 
-    public ActionResult() {
+    public ActionResult(String login) {
+        this(login, false);
     }
 }

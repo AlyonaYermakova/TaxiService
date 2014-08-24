@@ -7,8 +7,9 @@ public class ActionFactory {
     private final static Map<String, Action> actions = new HashMap<>();
 
     static {
-        actions.put("login", new LoginAction());
-        actions.put("registration", new RegistrationAction());
+        actions.put("POST/login", new LoginAction());
+        actions.put("GET/login", new LoginAction());
+
     }
 
     public static Action getAction(String actionName) {
