@@ -2,10 +2,9 @@ package com.epam.ae.action;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class RegistrationAction implements Action {
-
+public class ShowPageAction implements Action {
     @Override
     public ActionResult execute(HttpServletRequest request) {
-        return null;
+        return new ActionResult("home",true);
     }
 }

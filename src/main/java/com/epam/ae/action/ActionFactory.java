@@ -9,6 +9,7 @@ public class ActionFactory {
     static {
         actions.put("POST/login", new LoginAction());
         actions.put("GET/login", new LoginAction());
+        actions.put("GET/home", new ShowPageAction());
 
     }
 

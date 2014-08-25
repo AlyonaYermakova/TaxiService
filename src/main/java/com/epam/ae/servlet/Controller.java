@@ -15,16 +15,15 @@ public class Controller extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-   //     String actionName = req.getMethod() + req.getPathInfo();
-        String actionName = req.getParameter("action");
+        String actionName = req.getMethod() + req.getPathInfo();
         Action action = ActionFactory.getAction(actionName);
-        ActionResult result = action.execute(req, resp);
-        System.out.println("ACTIONNAME AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + actionName);
+        ActionResult result = action.execute(req);
+
 
         if (result.getPath().equals(req.getPathInfo().substring(1))){
             req.getRequestDispatcher("/WEB-INF/" + result.getPath() + ".jsp").forward(req, resp);
         } else {
-            req.getRequestDispatcher("/" + result.getPath() + ".jsp");
+            req.getRequestDispatcher("/WEB-INF/" + result.getPath() + ".jsp").forward(req,resp);
         }
 
 

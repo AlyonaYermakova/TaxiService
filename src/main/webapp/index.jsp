@@ -8,7 +8,7 @@
     <body>
 
     <h1>Hello!<br></h1>
-    <a href="${pageContext.request.contextPath}/login">Sign In</a>
+    <a href="${pageContext.request.contextPath}/do/login">Sign In</a>
 
     </body>
     </html>
