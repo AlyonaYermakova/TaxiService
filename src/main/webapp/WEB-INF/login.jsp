@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,6 +5,7 @@
 </head>
 <body>
 <h2>Please, enter your login and password</h2>
+
 <form method="post">
     Username: <input type="text" name="login">
     <br>

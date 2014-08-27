@@ -4,6 +4,15 @@ public class ActionResult {
     public String path; //url
     public boolean redirect; //get or post
 
+    public ActionResult(String path, boolean redirect) {
+        this.path = path;
+        this.redirect = redirect;
+    }
+
+    public ActionResult(String login) {
+        this(login, false);
+    }
+
     public String getPath() {
         return path;
     }
@@ -18,14 +27,5 @@ public class ActionResult {
 
     public void setRedirect(boolean redirect) {
         this.redirect = redirect;
-    }
-
-    public ActionResult(String path, boolean redirect) {
-        this.path = path;
-        this.redirect = redirect;
-    }
-
-    public ActionResult (String login) {
-        this(login, false);
     }
 }

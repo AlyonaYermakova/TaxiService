@@ -3,7 +3,9 @@ package com.epam.ae.servlet;
 import com.epam.ae.action.Action;
 import com.epam.ae.action.ActionFactory;
 import com.epam.ae.action.ActionResult;
+import com.epam.ae.dao.UserDAO;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,12 +22,15 @@ public class Controller extends HttpServlet {
         ActionResult result = action.execute(req);
 
 
-        if (result.getPath().equals(req.getPathInfo().substring(1))){
-            req.getRequestDispatcher("/WEB-INF/" + result.getPath() + ".jsp").forward(req, resp);
-        } else {
-            req.getRequestDispatcher("/WEB-INF/" + result.getPath() + ".jsp").forward(req,resp);
-        }
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/" + result.getPath() + ".jsp");
+        requestDispatcher.forward(req, resp);
 
+
+//        if (result.getPath().equals(req.getPathInfo().substring(1))){
+//            req.getRequestDispatcher("/WEB-INF/" + result.getPath() + ".jsp").forward(req, resp);
+//        } else {
+//            req.getRequestDispatcher("/WEB-INF/" + result.getPath() + ".jsp").forward(req,resp);
+//        }
 
 
 //        req.getRequestDispatcher("/WEB-INF/" + result + ".jsp").forward(req, resp);

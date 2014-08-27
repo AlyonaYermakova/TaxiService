@@ -14,7 +14,6 @@ public class Address {
     }
 
     public Address() {
-
     }
 
     public String getStreet() {
@@ -58,41 +57,4 @@ public class Address {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
-
-//    public Address(AddressBuilder addressBuilder) {
-//        this.street = addressBuilder.street;
-//        this.house = addressBuilder.house;
-//        this.flat = addressBuilder.flat;
-//        this.phoneNumber = addressBuilder.phoneNumber;
-//    }
-
-//    public static class AddressBuilder {
-//        private String street;
-//        private String house;
-//        private String flat;
-//        private String phoneNumber;
-//
-//        public AddressBuilder() {
-//        }
-//
-//        public AddressBuilder street(String street) {
-//            this.street = street;
-//            return this;
-//        }
-//
-//        public AddressBuilder house(String house) {
-//            this.house = house;
-//            return this;
-//        }
-//
-//        public AddressBuilder flat(String flat) {
-//            this.flat = flat;
-//            return this;
-//        }
-//
-//        public AddressBuilder phoneNumber(String phoneNumber) {
-//            this.phoneNumber = phoneNumber;
-//            return this;
-//        }
-//    }
 }

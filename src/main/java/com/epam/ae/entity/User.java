@@ -2,30 +2,26 @@ package com.epam.ae.entity;
 
 import java.util.UUID;
 
-public class User {
+public abstract class User {
     private UUID uuid;
     private String login;
     private String password;
     private String name;
     private String surname;
-    private Address address;
     private String email;
-    private Role role;
     private Gender gender;
 
-    public User() {
+    public User(UUID uuid, String login, String password, String name, String surname, String email, Gender gender) {
+        this.uuid = uuid;
+        this.login = login;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.gender = gender;
     }
 
-    public User(UserBuilder userBuilder){
-        this.uuid = userBuilder.uuid;
-        this.login = userBuilder.login;
-        this.password = userBuilder.password;
-        this.name = userBuilder.name;
-        this.surname = userBuilder.surname;
-        this.address = userBuilder.address;
-        this.email = userBuilder.email;
-        this.role = userBuilder.role;
-        this.gender = userBuilder.gender;
+    public User() {
     }
 
     public UUID getUuid() {
@@ -52,6 +48,22 @@ public class User {
         this.password = password;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -60,110 +72,24 @@ public class User {
         this.email = email;
     }
 
-    public Role getRole() {
-        return role;
+    public Gender getGender() {
+        return gender;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
-
 
     @Override
     public String toString() {
         return "User{" +
                 "uuid=" + uuid +
-                ", login=" + login + "\n"  +
-                ", password=" + password + '\n' +
-                ", name=" + name + '\n' +
-                ", surname=" + surname + '\n' +
-                ", address:" + address +'\n' +
-                ", email=" + email + '\n' +
-                ", role=" + role +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
                 ", gender=" + gender +
                 '}';
     }
-
-    public enum Role {
-        ADMIN, CLIENT, DISPATCHER;
-
-        @Override
-        public String toString() {
-            return name().toLowerCase();
-        }
-    }
-
-    public enum Gender {
-        MALE, FEMALE;
-
-        @Override
-        public String toString() {
-            return name().toLowerCase();
-        }
-    }
-
-    public static class UserBuilder{
-        private UUID uuid;
-        private String login;
-        private String password;
-        private String name;
-        private String surname;
-        private Address address;
-        private String email;
-        private Role role;
-        private Gender gender;
-
-        public UserBuilder(){}
-
-        public UserBuilder uuid (UUID uuid){
-            this.uuid = uuid;
-            return this;
-        }
-
-        public UserBuilder login (String login) {
-            this.login = login;
-            return this;
-        }
-
-        public UserBuilder password (String password) {
-            this.password = password;
-            return this;
-        }
-
-        public UserBuilder name (String name) {
-            this.name = name;
-            return this;
-        }
-
-        public UserBuilder surname(String surname) {
-            this.surname = surname;
-            return this;
-        }
-
-        public UserBuilder address(Address address) {
-            this.address = new Address("","","","");
-            return this;
-        }
-
-        public UserBuilder email(String email) {
-            this.email = email;
-            return this;
-        }
-
-        public UserBuilder role(Role role) {
-            this.role = role;
-            return this;
-        }
-
-        public UserBuilder gender(Gender gender) {
-            this.gender = gender;
-            return this;
-        }
-
-        public UserBuilder address(String s, String h, String f, String p) {
-            this.address = new Address(s,h,f,p);
-            return this;
-        }
-    }
-
 }
