@@ -82,14 +82,12 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "uuid=" + uuid +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", email='" + email + '\'' +
-                ", gender=" + gender +
-                '}';
+        return "uuid=" + uuid + '\n' +
+                ", login=" + login + '\n' +
+                ", password=" + password + '\n' +
+                ", name=" + name + '\n' +
+                ", surname=" + surname + '\n' +
+                ", email=" + email + '\n' +
+                ", gender=" + gender + '\n';
     }
 }

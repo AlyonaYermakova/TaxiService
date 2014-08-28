@@ -28,10 +28,8 @@ public class Dispatcher extends User {
 
     @Override
     public String toString() {
-        return "Dispatcher{" +
-                super.toString() +
-                "orders=" + orders +
-                '}';
+        return super.toString() +
+                "orders=" + orders;
     }
 
     public static class Builder {

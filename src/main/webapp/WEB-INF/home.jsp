@@ -6,6 +6,11 @@
 <body>
 <h1>HOME </h1>
 <h2>Welcome, ${user.name}!</h2>
+<pre>
+
+${user.toString()} <br>
+
+</pre>
 <a href="${pageContext.request.contextPath}/logout">Log out</a>
 
 
