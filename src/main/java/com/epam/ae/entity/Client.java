@@ -21,6 +21,8 @@ public class Client extends User {
                 "}";
     }
 
+
+
     public static class Builder {
         private UUID uuid;
         private String login;

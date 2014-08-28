@@ -7,8 +7,10 @@
 </head>
 <body>
 
-<h1>Hello!<br></h1>
-<a href="${pageContext.request.contextPath}/do/login">Sign In</a>
+<h1>Hello dear Guest!<br></h1>
+<h3>Please log in</h3>
+<a href="${pageContext.request.contextPath}/login">Sign In</a>
+
 
 </body>
 </html>

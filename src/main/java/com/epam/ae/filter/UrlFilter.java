@@ -18,10 +18,7 @@ public class UrlFilter implements Filter {
 
     private void doFilter(HttpServletRequest req, HttpServletResponse resp, FilterChain filterChain) throws ServletException, IOException {
         String pathInfo = req.getRequestURI().substring(req.getContextPath().length());
-        if (pathInfo.startsWith("/static") || pathInfo.startsWith("/webjars")) {
-            filterChain.doFilter(req, resp);
-            return;
-        }
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/do" + pathInfo);
         dispatcher.forward(req, resp);
     }

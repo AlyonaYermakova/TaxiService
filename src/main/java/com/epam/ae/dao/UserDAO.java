@@ -7,20 +7,22 @@ import java.util.List;
 import java.util.UUID;
 
 public class UserDAO {
-    private static List<Client> userList = new ArrayList<>();
+    private static List<User> userList = new ArrayList<>();
 
-    public static Client findByLoginPassword(String login, String password) {
-        Client foundUser = null;
-        for (Client user : userList) {
+    public static User findByLoginPassword(String login, String password) {
+        User foundUser = null;
+        for (User user : userList) {
             if (user.getLogin().equals(login) && user.getPassword().equals(password))
                 foundUser = user;
+            break;
         }
         return foundUser;
     }
 
-    public List<Client> getUserList() {
+    public List<User> getUserList() {
         return userList;
     }
+
     static {
         Client client = new Client.Builder()
                 .uuid(UUID.randomUUID())
@@ -33,5 +35,18 @@ public class UserDAO {
                 .gender(Gender.FEMALE)
                 .buildClient();
         userList.add(client);
+
+        Dispatcher dispatcher = new Dispatcher.Builder()
+                .uuid(UUID.randomUUID())
+                .login("disp1")
+                .password("pass")
+                .name("YYY")
+                .surname("XXX")
+                .email("xfdgthjkg")
+                .gender(Gender.MALE)
+                        //       .orders(orderList)
+                .buildDispatcher();
+
+        userList.add(dispatcher);
     }
 }

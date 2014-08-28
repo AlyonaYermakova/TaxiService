@@ -21,7 +21,10 @@ public class Controller extends HttpServlet {
         Action action = ActionFactory.getAction(actionName);
         ActionResult result = action.execute(req);
 
-
+        if (result.isRedirect()) {
+            resp.sendRedirect(req.getContextPath() + "/" + result.getPath());
+            return;
+        }
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/" + result.getPath() + ".jsp");
         requestDispatcher.forward(req, resp);
 

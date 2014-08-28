@@ -9,7 +9,9 @@ import org.slf4j.LoggerFactory;
 
 public class Runner {
     private static final Logger logger = LoggerFactory.getLogger(Runner.class);
-    private static List<Client> userList = new ArrayList<>();
+//    private static List<Client> userList = new ArrayList<>();
+    private static List<Order> orderList = new ArrayList<Order>();
+    private static List<User> userList = new ArrayList<User>();
 
     public static void main(String[] args) {
 //            Client user = new Client(new Client.Builder()
@@ -33,12 +35,30 @@ public class Runner {
                 .email("a@gmail.com")
                 .gender(Gender.FEMALE)
                 .buildClient();
-        System.out.println(client);
+
+        Order order = new Order(new Car("12", "red", "mers"), client, "note", "300");
+        orderList.add(order);
+
+        Dispatcher dispatcher = new Dispatcher.Builder()
+                .uuid(UUID.randomUUID())
+                .login("disp1")
+                .password("pass")
+                .name("YYY")
+                .surname("XXX")
+                .email("dgfdgdgd")
+                .gender(Gender.MALE)
+         //       .orders(orderList)
+        .buildDispatcher();
+     //   System.out.println(dispatcher);
+
+        userList.add(client);
+        userList.add(dispatcher);
+        System.out.println(userList);
 
 
 //
 
-        logger.info("User: " + "has been created");
+
     }
 
 

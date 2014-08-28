@@ -11,9 +11,11 @@ public class ActionFactory {
         actions.put("GET/index", new ShowPageAction("index"));
 
         actions.put("GET/login", new ShowPageAction("login"));
-        actions.put("POST/login", new LoginAction());
+        actions.put("POST/login", new LoginAction() );
+        actions.put("GET/home", new ShowPageAction("home"));
 
         actions.put("GET/logout", new LogOutAction());
+        actions.put("POST/logout", new ShowPageAction("index"));
 
     }
 

@@ -14,7 +14,7 @@ public class LoginAction implements Action {
     public ActionResult execute(HttpServletRequest request) {
         String login = request.getParameter(LOGIN);
         String password = request.getParameter(PASSWORD);
-        Client user = UserDAO.findByLoginPassword(login, password);
+        User user = UserDAO.findByLoginPassword(login, password);
 
         if (user != null) {
             request.getSession().setAttribute("user", user);
