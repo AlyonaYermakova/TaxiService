@@ -7,16 +7,57 @@ import java.util.List;
 import java.util.UUID;
 
 public class UserDAO {
+    private final static String CLIENT = "client";
+    private final static String DISPATCHER = "dispatcher";
     private static List<User> userList = new ArrayList<>();
 
-    public static User findByLoginPassword(String login, String password) {
+    public User findByLoginPassword(String login, String password) {
         User foundUser = null;
         for (User user : userList) {
-            if (user.getLogin().equals(login) && user.getPassword().equals(password))
+            if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
                 foundUser = user;
-            break;
+                break;
+            }
         }
         return foundUser;
+    }
+
+    public User findByName(String name) {
+        User foundUser = null;
+        for (User user : userList) {
+            if (user.getName().equals(name)) {
+                foundUser = user;
+                break;
+            }
+        }
+        return foundUser;
+    }
+
+    public boolean addUser(String login, String password, String name, String surname, String role) {
+        User auser = null;
+        if (role.equals(CLIENT)) {
+            auser = new Client.Builder()
+                    .uuid(UUID.randomUUID())
+                    .login(login)
+                    .password(password)
+                    .name(name)
+                    .surname(surname)
+                    .address("", "", "", "")
+                    .email("noemail@taxi.com")
+                    .gender(Gender.MALE)
+                    .buildClient();
+        } else if (role.equals(DISPATCHER)) {
+            auser = new Dispatcher.Builder()
+                    .uuid(UUID.randomUUID())
+                    .login(login)
+                    .password(password)
+                    .name(name)
+                    .surname(surname)
+                    .email("noemail@taxi.com")
+                    .gender(Gender.MALE)
+                    .buildDispatcher();
+        }
+        return userList.add(auser);
     }
 
     public List<User> getUserList() {
@@ -46,7 +87,17 @@ public class UserDAO {
                 .gender(Gender.MALE)
                         //       .orders(orderList)
                 .buildDispatcher();
-
         userList.add(dispatcher);
+
+        Administrator administrator = new Administrator.Builder()
+                .uuid(UUID.randomUUID())
+                .login("Admin")
+                .password("admin")
+                .name("Administrator")
+                .surname("Adminovich")
+                .email("admin@mail.com")
+                .gender(Gender.MALE)
+                .buildAdministrator();
+        userList.add(administrator);
     }
 }

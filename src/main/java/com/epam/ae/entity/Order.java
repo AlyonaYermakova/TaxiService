@@ -1,5 +1,7 @@
 package com.epam.ae.entity;
 
+import java.util.Date;
+
 public class Order {
 
     private Car car;
@@ -15,6 +17,9 @@ public class Order {
     }
 
     public Order() {
+    }
+
+    public Order(Car car, Client client, String note) {
     }
 
     public Car getCar() {
@@ -57,5 +62,33 @@ public class Order {
                 ", note='" + note + '\'' +
                 ", sum='" + sum + '\'' +
                 '}';
+    }
+
+    public static class Builder {
+        private Car car;
+        private Client client;
+        private String note;
+
+        public Builder() {
+        }
+
+        public Builder car(String n, String c, String b) {
+            this.car = new Car(n, c, b);
+            return this;
+        }
+
+        public Builder client(Client client) {
+            this.client = client;
+            return this;
+        }
+
+        public Builder note(String note) {
+            this.note = note;
+            return this;
+        }
+
+        public Order buildOrder() {
+            return new Order(car, client, note);
+        }
     }
 }

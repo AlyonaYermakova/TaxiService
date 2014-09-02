@@ -1,24 +1,15 @@
 package com.epam.ae.entity;
 
+import java.util.List;
 import java.util.UUID;
 
-public class Client extends User {
-    private Address address;
-
-    public Client(UUID uuid, String login, String password, String name, String surname, String email, Gender gender, Address address) {
+public class Administrator extends User {
+    public Administrator(UUID uuid, String login, String password, String name, String surname, String email, Gender gender) {
         super(uuid, login, password, name, surname, email, gender);
-        this.address = address;
     }
 
-    public Client() {
+    public Administrator() {
     }
-
-    @Override
-    public String toString() {
-        return super.toString() +
-                "address=" + address;
-    }
-
 
     public static class Builder {
         private UUID uuid;
@@ -26,7 +17,6 @@ public class Client extends User {
         private String password;
         private String name;
         private String surname;
-        private Address address;
         private String email;
         private Gender gender;
 
@@ -68,16 +58,10 @@ public class Client extends User {
             return this;
         }
 
-        public Builder address(String s, String h, String f, String p) {
-            this.address = new Address(s, h, f, p);
-            return this;
-        }
-
-        public Client buildClient() {
-            return new Client(uuid, login, password, name, surname, email, gender, address);
+        public Administrator buildAdministrator() {
+            return new Administrator(uuid, login, password, name, surname, email, gender);
 
         }
 
     }
-
 }

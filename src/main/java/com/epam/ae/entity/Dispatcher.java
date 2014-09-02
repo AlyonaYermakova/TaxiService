@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class Dispatcher extends User {
- private List<Order> orders;
+    private List<Order> orders;
 
     public Dispatcher(UUID uuid, String login, String password, String name, String surname, String email, Gender gender, List<Order> orders) {
         super(uuid, login, password, name, surname, email, gender);
@@ -16,7 +16,8 @@ public class Dispatcher extends User {
         this.orders = orders;
     }
 
-    public Dispatcher(){}
+    public Dispatcher() {
+    }
 
     public List<Order> getOrders() {
         return orders;
@@ -86,8 +87,7 @@ public class Dispatcher extends User {
 //        }
 
 
-
-        public Dispatcher buildDispatcher () {
+        public Dispatcher buildDispatcher() {
             return new Dispatcher(uuid, login, password, name, surname, email, gender, orders);
 
         }

@@ -8,8 +8,10 @@
 <body>
 
 <h1>Hello dear Guest!<br></h1>
-<h3>Please log in</h3>
-<a href="${pageContext.request.contextPath}/login">Sign In</a>
+
+<h3>Please log in or register</h3>
+<a href="${pageContext.request.contextPath}/login">Sign In</a> <br>
+<a href="${pageContext.request.contextPath}/register">Register now!</a>
 
 
 </body>

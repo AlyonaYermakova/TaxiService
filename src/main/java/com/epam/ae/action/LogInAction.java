@@ -9,12 +9,13 @@ public class LogInAction implements Action {
 
     private final static String LOGIN = "login";
     private final static String PASSWORD = "password";
+    UserDAO userDAO = new UserDAO();
 
     @Override
     public ActionResult execute(HttpServletRequest request) {
         String login = request.getParameter(LOGIN);
         String password = request.getParameter(PASSWORD);
-        User user = UserDAO.findByLoginPassword(login, password);
+        User user = userDAO.findByLoginPassword(login, password);
 
         if (user != null) {
             request.getSession().setAttribute("user", user);
