@@ -19,7 +19,7 @@ public class ActionFactory {
 
         actions.put("GET/logout", new ShowPageAction("index"));
 
-        actions.put("GET/successOrder", new ShowPageAction("index"));
+        actions.put("GET/successOrder", new ShowPageAction("successOrder"));
 
         actions.put("GET/register", new ShowPageAction("register"));
         actions.put("POST/register", new RegistrationAction());

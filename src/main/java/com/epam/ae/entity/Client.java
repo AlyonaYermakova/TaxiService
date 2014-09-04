@@ -16,7 +16,7 @@ public class Client extends User {
     @Override
     public String toString() {
         return super.toString() +
-                "address=" + address;
+                "address:" + address;
     }
 
     public Address getAddress() {

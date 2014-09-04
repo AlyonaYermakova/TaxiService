@@ -2,11 +2,12 @@ package com.epam.ae.util;
 
 import com.epam.ae.dao.UserDAO;
 import com.epam.ae.entity.*;
-
-import java.util.*;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 public class Runner {
     private static final Logger logger = LoggerFactory.getLogger(Runner.class);
