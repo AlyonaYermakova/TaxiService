@@ -19,6 +19,9 @@ public class Client extends User {
                 "address=" + address;
     }
 
+    public Address getAddress() {
+        return address;
+    }
 
     public static class Builder {
         private UUID uuid;

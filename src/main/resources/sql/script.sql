@@ -79,8 +79,7 @@ CREATE TABLE order (
     note VARCHAR (255),
     sum INT,
     FOREIGN KEY (car) REFERENCES car (id),
-    FOREIGN KEY (client) REFERENCES client (id),
-    FOREIGN KEY (sum) REFERENCES price(sum)
+    FOREIGN KEY (client) REFERENCES client (id)
 );
 
 CREATE TABLE dispatcher (

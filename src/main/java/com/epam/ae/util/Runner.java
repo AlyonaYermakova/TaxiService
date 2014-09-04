@@ -45,13 +45,14 @@ public class Runner {
         //     UserDAO userDAO = new UserDAO();
         Role role;
         role = Role.CLIENT;
-        System.out.println(role);
+//        System.out.println(role);
 
         UserDAO userDAO = new UserDAO();
         userDAO.addUser("123", "123", "123", "123", role.toString());
-        System.out.println(userDAO.getUserList());
+//        System.out.println(userDAO.getUserList());
 
-
+        Address ad = userDAO.getClientAddress(client);
+        System.out.println(ad);
 //
 
 

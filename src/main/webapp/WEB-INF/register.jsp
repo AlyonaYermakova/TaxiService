@@ -14,14 +14,14 @@ Name: <input type="text" name="name">
 <br>
 Surname: <input type="text" name="surname">
 <br>
-Role: <input type="text" name="role">
-<br>
-<%--<label>--%>
-<%--<select required name="role">--%>
-<%--<option selected="selected" value="dispatcher">Dispatcher</option>--%>
-<%--<option value="client">Client</option>--%>
-<%--</select>--%>
-<%--</label>--%>
+<%--Role: <input type="text" name="role">--%>
+<%--<br>--%>
+<label>
+<select required name="role">
+<option selected="selected" value="dispatcher">Dispatcher</option>
+<option value="client">Client</option>
+</select>
+</label>
 <input type="submit" value="Register">
 </form>
 </body>

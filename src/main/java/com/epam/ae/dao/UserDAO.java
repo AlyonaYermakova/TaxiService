@@ -33,6 +33,10 @@ public class UserDAO {
         return foundUser;
     }
 
+    public Address getClientAddress (Client client){
+        return client.getAddress();
+    }
+
     public boolean addUser(String login, String password, String name, String surname, String role) {
         User auser = null;
         if (role.equals(CLIENT)) {

@@ -38,7 +38,7 @@ public class OrderDAO {
         Order order = new Order.Builder()
                 .client(anyClient)
                 .car("355evm", "red", "bmw")
-                .note("enpty")
+                .note("empty")
                 .buildOrder();
     }
 

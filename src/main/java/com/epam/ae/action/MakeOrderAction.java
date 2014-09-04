@@ -11,15 +11,17 @@ public class MakeOrderAction implements Action {
 
     @Override
     public ActionResult execute(HttpServletRequest request) {
-
+        UserDAO userDAO = new UserDAO();
         String carType = request.getParameter("carType");
         String note = request.getParameter("note");
-
 
 
         HttpSession session = request.getSession();
 
         Client client = (Client) session.getAttribute("user");
+
+        Address address = userDAO.getClientAddress(client);
+        request.getSession().setAttribute("address", address);
 
 
 

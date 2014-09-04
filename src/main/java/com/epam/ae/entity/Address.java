@@ -50,6 +50,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return street + " " + house + " " + flat + " " + phoneNumber;
+        return street + " " + house + " " + flat;
     }
 }
