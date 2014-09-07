@@ -3,7 +3,6 @@ package com.epam.ae.servlet;
 import com.epam.ae.action.Action;
 import com.epam.ae.action.ActionFactory;
 import com.epam.ae.action.ActionResult;
-import com.epam.ae.dao.UserDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

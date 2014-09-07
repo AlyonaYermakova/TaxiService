@@ -1,6 +1,6 @@
 package com.epam.ae.util;
 
-import com.epam.ae.dao.UserDAO;
+import com.epam.ae.dao.TestUserDAO;
 import com.epam.ae.entity.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,13 +42,13 @@ public class Runner {
                 .buildDispatcher();
         //   System.out.println(dispatcher);
 
-//        UserDAO.addUser("666", "666", "666", "666", "666");
+//        UserDAO.addClient("666", "666", "666", "666", "666");
         //     UserDAO userDAO = new UserDAO();
         Role role;
         role = Role.CLIENT;
 //        System.out.println(role);
 
-        UserDAO userDAO = new UserDAO();
+        TestUserDAO userDAO = new TestUserDAO();
         userDAO.addUser("123", "123", "123", "123", role.toString());
 //        System.out.println(userDAO.getUserList());
 

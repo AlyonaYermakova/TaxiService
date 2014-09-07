@@ -1,12 +1,12 @@
 package com.epam.ae.action;
 
-import com.epam.ae.dao.UserDAO;
+import com.epam.ae.dao.TestUserDAO;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class RegistrationAction implements Action {
 
-    UserDAO userDAO = new UserDAO();
+    TestUserDAO userDAO = new TestUserDAO();
 
     @Override
     public ActionResult execute(HttpServletRequest request) {

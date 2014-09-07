@@ -1,13 +1,12 @@
 package com.epam.ae.entity;
 
-import java.util.Date;
-
 public class Order {
 
     private Car car;
     private Client client;
     private String note;
     private String sum;
+    private boolean isComplete = false;
 
     public Order(Car car, Client client, String note, String sum) {
         this.car = car;
@@ -20,6 +19,14 @@ public class Order {
     }
 
     public Order(Car car, Client client, String note) {
+    }
+
+    public boolean isComplete() {
+        return isComplete;
+    }
+
+    public void setComplete(boolean isComplete) {
+        this.isComplete = isComplete;
     }
 
     public Car getCar() {

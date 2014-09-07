@@ -1,9 +1,11 @@
 package com.epam.ae.dao;
 
-import com.epam.ae.entity.*;
+import com.epam.ae.entity.Car;
+import com.epam.ae.entity.Client;
+import com.epam.ae.entity.Gender;
+import com.epam.ae.entity.Order;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,9 +23,17 @@ public class OrderDAO {
                 .client(client)
                 .note(note)
                 .buildOrder();
+        order.getCar().setIsFree(false);
         return orders.add(order);
     }
 
+    public void completeOrder(Order order) {
+        order.setComplete(true);
+        Car car = order.getCar();
+        car.setIsFree(true);
+    }
+
+    //TODO find free car
     static {
         Client anyClient = new Client.Builder()
                 .uuid(UUID.randomUUID())

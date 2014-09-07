@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ae</groupId>
-    <artifactId>TextParsing</artifactId>
+    <artifactId>TaxiService</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>war</packaging>
@@ -50,6 +50,18 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jolbox</groupId>
+            <artifactId>bonecp</artifactId>
+            <version>0.7.1.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.181</version>
         </dependency>
     </dependencies>
 

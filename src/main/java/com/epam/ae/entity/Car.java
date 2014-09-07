@@ -6,6 +6,7 @@ public class Car {
     private String color;
     private String brand;
     private CarType carType;
+    private Boolean isFree = true;
 
     public Car(String number, String color, String brand) {
         this.number = number;
@@ -15,6 +16,14 @@ public class Car {
     }
 
     public Car() {
+    }
+
+    public Boolean getIsFree() {
+        return isFree;
+    }
+
+    public void setIsFree(Boolean isFree) {
+        this.isFree = isFree;
     }
 
     public String getNumber() {

@@ -1,6 +1,6 @@
 package com.epam.ae.action;
 
-import com.epam.ae.dao.UserDAO;
+import com.epam.ae.dao.TestUserDAO;
 import com.epam.ae.entity.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +9,7 @@ public class LogInAction implements Action {
 
     private final static String LOGIN = "login";
     private final static String PASSWORD = "password";
-    UserDAO userDAO = new UserDAO();
+    TestUserDAO userDAO = new TestUserDAO();
 
     @Override
     public ActionResult execute(HttpServletRequest request) {

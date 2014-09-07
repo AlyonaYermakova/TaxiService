@@ -15,10 +15,6 @@ public class ShowPageAction implements Action {
             request.setAttribute("home", true);
         }
 
-        if (actionResult.getPath().equals("makeOrder")) {
-            request.setAttribute("makeOrder", true);
-        }
-
         return actionResult;
     }
 }

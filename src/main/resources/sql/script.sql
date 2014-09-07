@@ -25,6 +25,7 @@ CREATE TABLE user (
     surname VARCHAR(40) NOT NULL,
     role INT NOT NULL,
     gender INT NOT NULL,
+    isDelete BOOLEAN,
     UNIQUE (email),
     UNIQUE (login),
     FOREIGN KEY (role) REFERENCES role (id),
@@ -33,13 +34,15 @@ CREATE TABLE user (
 CREATE TABLE price (
     id   INT PRIMARY KEY,
     cityPart VARCHAR (30) NOT NULL,
-    sum INT
+    sum INT,
+    isDelete BOOLEAN
 );
 
 CREATE TABLE street (
     id   INT PRIMARY KEY,
     street VARCHAR (30) NOT NULL,
     cityPart INT,
+    isDelete BOOLEAN
     FOREIGN KEY (cityPart) REFERENCES price (id)
 );
 
@@ -50,14 +53,17 @@ CREATE TABLE color (
 
 CREATE TABLE brand (
     id   INT PRIMARY KEY,
-    brand VARCHAR (30) NOT NULL
+    brand VARCHAR (30) NOT NULL,
+    isDelete BOOLEAN
 );
 
 CREATE TABLE car (
     id   INT PRIMARY KEY,
     number VARCHAR (7) NOT NULL,
     color INT,
-    brand int,
+    brand INT,
+    isFree BOOLEAN,
+    isDelete BOOLEAN,
     FOREIGN KEY (color) REFERENCES color (id),
     FOREIGN KEY (brand) REFERENCES brand (id),
 );
@@ -68,16 +74,17 @@ CREATE TABLE client (
     street INT,
     house VARCHAR (10),
     flat VARCHAR (10),
-    PRIMARY KEY (id),
+    isDelete BOOLEAN,
     FOREIGN KEY (user) REFERENCES user (id),
     FOREIGN KEY (street) REFERENCES street (id));
 
-CREATE TABLE order (
+CREATE TABLE orders (
     id   INT PRIMARY KEY,
     car INT,
     client INT,
     note VARCHAR (255),
     sum INT,
+    isDelete BOOLEAN,
     FOREIGN KEY (car) REFERENCES car (id),
     FOREIGN KEY (client) REFERENCES client (id)
 );
@@ -86,6 +93,7 @@ CREATE TABLE dispatcher (
     id   INT PRIMARY KEY,
     user INT,
     order INT,
+    isDelete BOOLEAN,
     FOREIGN KEY (user) REFERENCES user (id),
     FOREIGN KEY (order) REFERENCES order (id)
 );
