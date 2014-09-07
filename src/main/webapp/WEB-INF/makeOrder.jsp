@@ -4,7 +4,7 @@
     <title>Make Order</title>
 </head>
 <body>
-<form method="post">
+<form action= "makeOrder" method="post">
     <h1>Make Order</h1>
     Tariff:
     <label>
@@ -17,9 +17,13 @@
     <br>
     Your name: <input type="text" name="name" value=${user.name}>
     <br>
-    Address: <input type="text" name="address" ${user.address.street}>
+    <%--Street: <input type="text" name="street" value = ${user.address.street}>--%>
+    <%--<br>--%>
+    <%--House: <input type="text" name="house" value = ${user.address.house}>--%>
+    <%--<br>--%>
+    Address: <input type="text" name="address" value = ${user.address}>
     <br>
-    Phone number: <input type="text" name="phoneNumber" ${user.address.phoneNumber}>
+    Phone number: <input type="text" name="phoneNumber" value = ${user.address.phoneNumber}>
     <br>
     Note: <input type="text" name="note">
     <br>

@@ -52,8 +52,8 @@ public class Runner {
         userDAO.addUser("123", "123", "123", "123", role.toString());
 //        System.out.println(userDAO.getUserList());
 
-        Address ad = userDAO.getClientAddress(client);
-        System.out.println(ad);
+//        Address ad = userDAO.getClientAddress(client);
+//        System.out.println(ad);
 //
 
 

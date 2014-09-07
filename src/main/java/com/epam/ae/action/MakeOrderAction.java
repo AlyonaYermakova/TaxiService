@@ -20,7 +20,10 @@ public class MakeOrderAction implements Action {
 
         Client client = (Client) session.getAttribute("user");
 
-        Address address = client.getAddress();
+        request.getSession().setAttribute("client", client);
+
+//        Address address = client.getAddress();
+      Address address = userDAO.getClientAddress(client);
         request.getSession().setAttribute("address", address);
 
 

@@ -5,5 +5,10 @@
 </head>
 <body>
 Your order is accepted. Please wait.
+<%--<pre>--%>
+
+<%--${order.toString()} <br>--%>
+
+<%--</pre>--%>
 </body>
 </html>

@@ -1,9 +1,6 @@
 package com.epam.ae.dao;
 
-import com.epam.ae.entity.Car;
-import com.epam.ae.entity.Client;
-import com.epam.ae.entity.Gender;
-import com.epam.ae.entity.Order;
+import com.epam.ae.entity.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +20,19 @@ public class OrderDAO {
                 .client(client)
                 .note(note)
                 .buildOrder();
-        order.getCar().setIsFree(false);
+ //       order.getCar().setIsFree(false);  //Do not work with it :(
         return orders.add(order);
     }
-
+    public Order findOrder(User user) {
+        Order foundOrder = null;
+        for (Order order : orders) {
+            if (order.getClient().equals(user)) {
+                foundOrder = order;
+                break;
+            }
+        }
+        return foundOrder;
+    }
     public void completeOrder(Order order) {
         order.setComplete(true);
         Car car = order.getCar();

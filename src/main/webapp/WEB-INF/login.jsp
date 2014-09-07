@@ -6,7 +6,7 @@
 <body>
 <h2>Please, enter your login and password</h2>
 
-<form method="post">
+<form form action="${pageContext.request.contextPath}/login" method="post">
     Username: <input type="text" name="login">
     <br>
     Password: <input type="password" name="password">

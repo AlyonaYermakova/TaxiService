@@ -22,10 +22,10 @@ public class TestUserDAO {
         return foundUser;
     }
 
-    public User findByName(String name) {
+    public User findByLogin(String login) {
         User foundUser = null;
         for (User user : userList) {
-            if (user.getName().equals(name)) {
+            if (user.getName().equals(login)) {
                 foundUser = user;
                 break;
             }
